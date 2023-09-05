@@ -1,0 +1,54 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { setTargetElement, getTargetElement } from './common/global'
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	'use strict'
+
+	showPopup('.popup-wrapper', '.call-popup', '#confirm-lock')
+})
+
+export const showPopup = (selector, btn, lock) => {
+	const popupWrapper = document.querySelector(selector)
+	const popButtons = document.querySelectorAll(btn)
+	const closeBtns = document.querySelectorAll('.popup__close')
+	setTargetElement(document.querySelector(lock))
+
+	if (!popupWrapper) return
+	popButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			if (!popupWrapper.classList.contains('showed')) {
+				popupWrapper.classList.add('showed')
+				popupWrapper.classList.remove('closed')
+				disableBodyScroll(getTargetElement(), { reserveScrollBarGap: true })
+			} else {
+				popupWrapper.classList.add('closed')
+				setTimeout(() => popupWrapper.classList.remove('showed'), 350);
+				setTimeout(() => popupWrapper.classList.remove('closed'), 350);
+				enableBodyScroll(getTargetElement())
+			}
+		})
+	})
+
+	popupWrapper.addEventListener('click', e => {
+		e.stopPropagation()
+
+		const target = e.target
+
+		if (target.className && target.classList.contains('popup-wrapper')) {
+			popupWrapper.classList.add('closed')
+			setTimeout(() => popupWrapper.classList.remove('showed'), 350);
+			setTimeout(() => popupWrapper.classList.remove('closed'), 350);
+			enableBodyScroll(getTargetElement())
+		}
+	})
+
+	closeBtns.forEach(button => {
+		button.addEventListener('click', () => {
+			popupWrapper.classList.add('closed')
+			setTimeout(() => popupWrapper.classList.remove('showed'), 350);
+			setTimeout(() => popupWrapper.classList.remove('closed'), 350);
+			enableBodyScroll(getTargetElement())
+		})
+	})
+}

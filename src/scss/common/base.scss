@@ -76,6 +76,27 @@ input {
 	@media all and (min-width: 360px) {
 		padding: 17.5px 32px;
 	}
+
+	&.popup-input {
+		width: 100%;
+		background-color: rgba(122, 122, 122, 0.15);
+		color: $black;
+		font-family: $ff;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 120%;
+		margin-bottom: 24px;
+
+		&::placeholder {
+			color: $black;
+			font-family: $ff;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 120%;
+		}
+	}
 }
 
 .control {

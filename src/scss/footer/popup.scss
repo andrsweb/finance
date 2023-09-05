@@ -1,0 +1,185 @@
+.popup-wrapper {
+	position:fixed;
+	display: none;
+	align-items:center;
+	justify-content:center;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index: 200;
+	overflow-y: auto;
+	padding: 20px;
+	margin: auto 0;
+	background: rgba(14, 14, 14, 0.50);
+	backdrop-filter: blur(5px); 
+
+	&.showed {
+		display: flex;
+		animation: show 1s forwards;
+
+		@keyframes show {
+			0% {
+				display: none;
+				opacity: 0;
+			}
+
+			1% {
+				display: flex;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.closed {
+			animation: fade $tr forwards ease;
+		
+			@keyframes fade {
+				0% {
+					opacity: 1;
+					scale: 1;
+				}
+
+				100% {
+					opacity: 0;
+					scale: 0;
+				}
+			}
+		}
+
+	.popup {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 20px 24px 24px 24px;
+		margin: auto 0;
+		background: $light-grey;
+		max-width: 296px;
+		border-radius: 8px;
+		box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.05);
+
+		@media all and (min-width: $md) {
+			max-width: 456px;
+			padding: 32px 40px 40px 40px;
+		}
+
+		@media all and (min-width: $xl) {
+			max-width: 496px;
+		}
+
+		&__text {
+			color:#45494B;
+			font-family: $ff;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 120%;
+			margin-bottom: 24px;
+
+			@media all and (min-width: $md) {
+				font-size: 18px;
+				margin-bottom: 40px;
+			}
+	
+			span {
+				font-weight: $fw-medium;
+			}
+		}
+
+		&__title {
+			color: $black;
+			font-family: $ff;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: $fw-medium;
+			line-height: normal;
+			margin-bottom: 12px;
+
+			@media all and (min-width: $md) {
+				font-size: 28px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.change__number {
+			color: $grey;
+			font-family: Onest;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 120%;
+			cursor: pointer;
+			transition: opacity ease $tr;
+			text-align: center;
+
+			&:hover {
+				opacity: $op;
+			}
+
+			@media all and (min-width: $md) {
+				font-size: 18px;
+			}
+		}
+
+		&__close {
+			cursor: pointer;
+			color: $grey;
+			font-family: $ff;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 120%;
+			transition: opacity ease $tr;
+			margin-left: auto;
+			margin-bottom: 3px;
+
+			&:hover {
+				opacity: $op;
+			}
+
+			@media all and (min-width: $md) {
+				font-size: 16px;
+				margin-bottom: 9px;
+			}
+		}
+	}
+
+	form {
+		width: 100%;
+	}
+
+	.button__wrapper {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+
+		.button {
+			width: 100%;
+		}
+	}
+
+	.confirm__submit {
+		color: $black;
+		text-align: center;
+		font-family: $ff;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 120%;
+		margin-bottom: 24px;
+
+		span {
+			font-weight: $fw-medium;
+		}
+
+		@media all and (min-width: $md) {
+			font-size: 20px;
+			margin-bottom: 40px;
+		}
+	}
+}
