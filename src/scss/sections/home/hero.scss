@@ -96,53 +96,6 @@
 		}
 	}
 
-	&__form {
-		width: 100%;
-
-		fieldset {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-		}
-
-		input {
-			width: 100%;
-			margin-bottom: 12px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		.checkbox {
-			margin-bottom: 0;
-		}
-
-		.control {
-			display: flex;
-			align-items: center;
-			color: $light-grey;
-			font-family: $ff;
-			font-size: 14px;
-			font-style: normal;
-			font-weight: $fw-regular;
-			line-height: 120%;
-			margin: 25.5px 0 13.5px;
-		}
-
-		.button {
-			width: 100%;
-		}
-
-		@media all and (min-width: $md) {
-			max-width: 456px;
-		}
-
-		@media all and (min-width: $xl) {
-			max-width: 416px;
-		}
-	}
-
 	&__img_wrapper {
 		display: flex;
 		justify-content: center;
@@ -179,5 +132,52 @@
 			width: 600px;
 			height: 700px;
 		}
+	}
+}
+
+.hero__form {
+	width: 100%;
+
+	fieldset {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	input {
+		width: 100%;
+		margin-bottom: 12px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.checkbox {
+		margin-bottom: 0;
+	}
+
+	.control {
+		display: flex;
+		align-items: center;
+		color: $light-grey;
+		font-family: $ff;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 120%;
+		margin: 25.5px 0 13.5px;
+	}
+
+	.button {
+		width: 100%;
+	}
+
+	@media all and (min-width: $md) {
+		max-width: 456px;
+	}
+
+	@media all and (min-width: $xl) {
+		max-width: 416px;
 	}
 }
