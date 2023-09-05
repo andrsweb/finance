@@ -1,0 +1,92 @@
+.hero {
+	position: relative;
+	padding: 80px 0;
+
+	&__bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 860px;
+		z-index: -1;
+		border-radius: 40px;
+		object-fit: cover;
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		border-radius: 40px;
+		position: relative;
+	}
+
+	&__info {
+		width: 100%;
+		max-width: 746px;
+
+		&_text {
+			color: $light-grey;
+			font-family: $ff;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 120%;
+			width: 100%;
+			max-width: 527px;
+			margin: 37px 0 61px;
+			padding-left: 32px;
+			border-left: 2px solid $white;
+		}
+	}
+
+	&__form {
+		width: 100%;
+		max-width: 416px;
+
+		fieldset {
+			display: flex;
+			flex-direction: column;
+		}
+
+		input {
+			margin-bottom: 12px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.control {
+			display: flex;
+			align-items: center;
+			color: $light-grey;
+			font-family: $ff;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 120%;
+			margin: 25.5px 0 13.5px;
+		}
+
+		.button {
+			width: 100%;
+		}
+	}
+
+	&__img_wrapper {
+		position: absolute;
+		right: 0;
+		top: 10px;
+	}
+
+	&__img {
+		width: 600px;
+		height: 700px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
