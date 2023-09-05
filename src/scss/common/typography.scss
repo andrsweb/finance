@@ -1,9 +1,5 @@
 h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h2, .h2 {
 	font-family: $ff;
 	font-weight: $fw-medium;
 	line-height: $lh-title;
@@ -17,9 +13,14 @@ h1, .h1 {
 	font-style: normal;
 	font-weight: $fw-medium;
 	line-height: 120%;
+	text-align: center;
 
 	@media all and (min-width: $md) {
 		font-size: 52px;
+	}
+
+	@media all and (min-width: $xl) {
+		text-align: left;
 	}
 }
 
@@ -31,29 +32,9 @@ h2, .h2 {
 	}
 }
 
-h3, .h3 {
-	font-size: 30px
-}
-
-h4, .h4 {
-	font-size: $fs-xl;
-
-	@media all and (min-width: $lg) {
-		font-size: 24px
-	}
-}
-
-h5, .h5 {
-	font-size: $fs-xl
-}
-
-h6, .h6 {
-	font-size: $fs-lg
-}
-
 a {
 	display: inline-block;
-	text-decoration: underline;
+	text-decoration: none;
 	transition: color ease-out $tr;
 
 	&:hover {

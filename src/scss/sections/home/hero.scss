@@ -1,59 +1,121 @@
 .hero {
 	position: relative;
-	padding: 80px 0;
+	padding: 40px 0;
+
+	@media all and (min-width: $md) {
+		padding: 52px 0;
+	}
+
+	@media all and (min-width: $xl) {
+		padding: 80px 0;
+	}
 
 	&__bg {
 		position: absolute;
 		left: 0;
 		top: 0;
 		width: 100%;
-		height: 860px;
+		height: 100%;
 		z-index: -1;
 		border-radius: 40px;
 		object-fit: cover;
+		object-position: left;
+		display: none;
+
+		@media all and (min-width: $xl) {
+			left: 0;
+			top: 0;
+			display: block;
+		}
+
+		&_mob {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			border-radius: 40px;
+			object-fit: cover;
+
+			@media all and (min-width: $md) {
+				object-position: 50% 73%;
+			}
+
+			@media all and (min-width: $xl) {
+				display: none;
+			}
+		}
 	}
 
 	&__wrapper {
 		display: flex;
 		align-items: center;
+		flex-direction: column;
 		border-radius: 40px;
 		position: relative;
+
+		@media all and (min-width: $xl) {
+			flex-direction: row;
+		}
 	}
 
 	&__info {
 		width: 100%;
-		max-width: 746px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media all and (min-width: $xl) {
+			max-width: 746px;
+			align-items: flex-start;
+		}
 
 		&_text {
 			color: $light-grey;
 			font-family: $ff;
-			font-size: 20px;
+			font-size: 16px;
 			font-style: normal;
 			font-weight: $fw-regular;
 			line-height: 120%;
 			width: 100%;
-			max-width: 527px;
-			margin: 37px 0 61px;
-			padding-left: 32px;
-			border-left: 2px solid $white;
+			margin: 32px 0;
+			text-align: center;
+
+			@media all and (min-width: $md) {
+				font-size: 20px;
+				margin: 39px 0 52px;
+			}
+
+			@media all and (min-width: $xl) {
+				text-align: left;
+				max-width: 527px;
+				padding-left: 32px;
+				border-left: 2px solid $white;
+			}
 		}
 	}
 
 	&__form {
 		width: 100%;
-		max-width: 416px;
 
 		fieldset {
 			display: flex;
 			flex-direction: column;
+			width: 100%;
 		}
 
 		input {
+			width: 100%;
 			margin-bottom: 12px;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
+		}
+
+		.checkbox {
+			margin-bottom: 0;
 		}
 
 		.control {
@@ -71,22 +133,51 @@
 		.button {
 			width: 100%;
 		}
+
+		@media all and (min-width: $md) {
+			max-width: 456px;
+		}
+
+		@media all and (min-width: $xl) {
+			max-width: 416px;
+		}
 	}
 
 	&__img_wrapper {
-		position: absolute;
-		right: 0;
-		top: 10px;
+		display: flex;
+		justify-content: center;
+		margin-top: 32px;
+
+		@media all and (min-width: $md) {
+			margin-top: 47px;
+		}
+
+		@media all and (min-width: $xl) {
+			position: absolute;
+			right: 0;
+			top: -60px;
+			margin-top: 0;
+		}
 	}
 
 	&__img {
-		width: 600px;
-		height: 700px;
+		width: 296px;
+		height: 342px;
 
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+
+		@media all and (min-width: $md) {
+			width: 410px;
+			height: 480px;
+		}
+
+		@media all and (min-width: $xl) {
+			width: 600px;
+			height: 700px;
 		}
 	}
 }

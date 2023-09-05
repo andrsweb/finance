@@ -51,7 +51,7 @@ input {
 	line-height: 120%;
 	background: $input-bg;
 	border-radius: $bord10;
-	padding: 17.5px 32px;
+	padding: 17.5px 20px;
 	border: 2px solid transparent;
 
 	&::placeholder {
@@ -71,6 +71,10 @@ input {
 		&::placeholder {
 			opacity: 1;
 		}
+	}
+
+	@media all and (min-width: 360px) {
+		padding: 17.5px 32px;
 	}
 }
 
