@@ -120,4 +120,12 @@
 			opacity: $op;
 		}
 	}
+
+	&__social {
+		transition: opacity ease $tr;
+
+		&:hover {
+			opacity: $op;
+		}
+	}
 }

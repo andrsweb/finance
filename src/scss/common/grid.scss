@@ -1,7 +1,7 @@
 .container {
 	width: 100%;
 	max-width: 100%;
-	padding: 0 $container-padding;
+	padding: 0 12px;
 	margin: 0 auto;
 
 	@media all and (min-width: $md) {
@@ -20,5 +20,9 @@
 		width: 100%;
 		max-width: 100%;
 		padding: 0 $container-padding
+	}
+
+	@media all and (min-width: $md) {
+		padding: 0 $container-padding;
 	}
 }
